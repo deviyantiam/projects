@@ -1,0 +1,68 @@
+<html>
+    <head><meta charset="UTF-8">
+        <title>Goods You Might Like</title>
+        <script>body {
+            
+                font-family: 'Open Sans', San-Serif;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+              }
+              
+              h1 {
+                margin-top:80px;
+                font-weight: bold;
+              }</script>
+                <style>.btn {
+                        margin-left: 10px;
+                        margin-right: 10px;
+                      }
+                      /* Boostrap Buttons Styling */
+                      
+                      .btn-default {
+                        font-family: Raleway-SemiBold;
+                        font-size: 13px;
+                        color: #ed7171;
+                        letter-spacing: 1px;
+                        line-height: 15px;
+                        border: 2px solid#ed7171;
+                        border-radius: 40px;
+                        background: transparent;
+                        transition: all 0.3s ease 0s;
+                      }
+                      
+                      .btn-default:hover {
+                        color: #FFF;
+                        background: #ed7171;
+                        border: 2px solid #ed7171;
+                      }
+                      .btn-primary {
+      font-family: Raleway-SemiBold;
+      font-size: 13px;
+      color: #000000;
+      letter-spacing: 1px;
+      line-height: 15px;
+      border: 2px solid #000000;
+      border-radius: 40px;
+      background: transparent;
+      transition: all 0.3s ease 0s;
+    }
+    
+    .btn-primary:hover {
+      color: #FFF;
+      background: #000000;
+      border: 2px solid #000000;
+    }        
+                </style></head>
+<body color='#333' align='center'>
+<br>
+   <br>
+   <h1>Similar products:</h1>
+   <p>{{pro1}} rating {{r1}}</p>
+   <p>{{pro2}} rating {{r2}}</p>
+   <p>{{pro3}} rating {{r3}}</p>
+    <p>The feedback estimated as {{feedb}}: negative prob {{pron}}, positive prob {{probb}} </p>
+    
+<button onclick="location.href='/product'"type="button" class="btn btn-primary">Go Back</button>
+<button onclick="location.href='/'"type="button" class="btn btn-default">Home</button>
+</body>
+</html>

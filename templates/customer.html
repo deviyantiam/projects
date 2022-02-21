@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Customer Segmentation</title>
+  <link rel="stylesheet" type="text/css" href="../static/cust.css">
+<style>.btn {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  /* Boostrap Buttons Styling */
+  
+  .btn-default {
+    font-family: Raleway-SemiBold;
+    font-size: 13px;
+    color: rgb(205,92,92);
+    letter-spacing: 1px;
+    line-height: 15px;
+    border: 2px solid rgb(205,92,92);
+    border-radius: 40px;
+    background: #f7efec;
+    transition: all 0.3s ease 0s;
+  }
+  
+  .btn-default:hover {
+    color: rgb(30,30,40);
+    background: rgb(205,92,92);
+    border: 2px solid rgb(205,92,92);
+  }</style>
+  <style>
+
+</style>
+</head>
+
+<body>
+  <div class="header">
+      <h1 align='center' font-size='100px'>Customer Segmentation</h1>
+  </div>
+  <br>
+  <div>
+      <!-- Main Input For Receiving Query to our ML -->
+      <form action="{{ url_for('cust_seg')}}" method="post">
+      <p align='justify' style="width: 820px" ><font size='+1'> When was the last time bought something here? (in days, eg. today = 0 or last week = 7) </font></p>
+      <input style="width: 820px"name="recency" type="text" class="feedback-input" placeholder="0-373" required='required'/>
+      <p align='justify'><font size='+1' >How many times have you purchased something here?</font></p>
+        <input style="width: 820px" name="freq" type="text" class="feedback-input" placeholder="1-248" required='required'/>
+        <p align='justify'><font size='+1' >How much money have you spent with us? ($, eg. 700) </font></p>
+        <input style="width: 820px" name="mone" type="text" class="feedback-input" placeholder="0-279489" required='required' />
+      <input style="width: 820px" type="submit" value="SUBMIT"/>
+        </form>
+    </div>
+  <br>
+   <br>
+ <br>
+ <div align='center'>
+   <button onclick="location.href='/'" type="button" class="btn btn-default">Home!</button>
+</div>
+</body>
+</html>

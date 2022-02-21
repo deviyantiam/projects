@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../static/js/xx.js"></script>
+    <title>Movies For You</title>
+    <script type="text/javascript">
+            $(function() { 
+                $.ajax({
+                    url: '{{ url_for("autocomplete") }}'
+                    }).done(function (data) {
+                        $('.form-control').autocomplete({
+                            source: data,
+                            minLength: 3
+        
+                        });
+                    });
+             });
+        </script>
+        <style>.btn {
+                margin-left: 10px;
+                margin-right: 10px;
+              }
+              /* Boostrap Buttons Styling */
+              
+              .btn-default {
+                font-family: Raleway-SemiBold;
+                font-size: 13px;
+                color: #ed7171;
+                letter-spacing: 1px;
+                line-height: 15px;
+                border: 2px solid#ed7171;
+                border-radius: 40px;
+                background: transparent;
+                transition: all 0.3s ease 0s;
+              }
+              
+              .btn-default:hover {
+                color: #FFF;
+                background: #ed7171;
+                border: 2px solid #ed7171;
+              }
+              .btn-primary {
+  font-family: Raleway-SemiBold;
+  font-size: 13px;
+  color: rgba(240, 173, 78, 0.75);
+  letter-spacing: 1px;
+  line-height: 15px;
+  border: 2px solid rgba(240, 173, 78, 0.75);
+  border-radius: 40px;
+  background: transparent;
+  transition: all 0.3s ease 0s;
+}
+
+.btn-primary:hover {
+  color: #FFF;
+  background: rgba(240, 173, 78, 0.75);
+  border: 2px solid rgba(240, 173, 78, 0.75);
+}        
+                      
+        </style>
+      <style>body {
+            
+          font-family: 'Open Sans', San-Serif;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+        h1 {
+          margin-top:80px;
+          font-weight: bold;
+        }
+        h3 {
+          margin-top: 25px;
+          margin-bottom: 25px;
+        }
+        </style>
+</head>
+
+<body align='center'>
+
+              <h1>Hi, Movie Geek!</h1>
+              <h3>We'll recommed some movies you may like. Firstly, fill in some movies you've watched to the boxes below</h3>
+   <form id="form1" action="/movrec" method="POST" enctype="multipart/form-data"> 
+    <br><br>
+    <div class='form-row'>
+    <div class="form-group col-md-8">
+    <input id='autocomplete'type="text" name="title[]" class="form-control" placeholder="Enter title" required='required' />
+</div>
+<div class="form-group col-md-2">
+        
+                  <select id="mySelect" class='form-control'name = "rat[]"required='required'>
+                    <option selected disabled>Rate (1-5)</option>
+                    <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  </select>
+                </div>
+            </div>
+                  <br><br>
+    <div class='form-row'>
+    <div class="form-group col-md-8">
+    <input id='autocomplete'type="text" name="title[]" class="form-control" placeholder="Enter title" required='required' />
+</div>
+<div class="form-group col-md-2">
+        
+                  <select id="mySelect" class='form-control'name = "rat[]"required='required'>
+                        <option selected disabled>Rate (1-5)</option>
+                    <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  </select>
+                </div>
+            </div>
+                  <br><br>
+   <div class='form-row'>
+    <div class="form-group col-md-8">
+    <input id='autocomplete'type="text" name="title[]" class="form-control" placeholder="Enter title" required='required' />
+</div>
+<div class="form-group col-md-2">
+        
+                  <select id="mySelect" class='form-control'name = "rat[]"required='required'>
+                        <option selected disabled>Rate (1-5)</option>
+                    <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  </select>
+                </div>
+            </div>
+                  <br><br>
+    <div class='form-row'>
+    <div class="form-group col-md-8">
+    <input id='autocomplete'type="text" name="title[]" class="form-control" placeholder="Enter title" required='required' />
+</div>
+<div class="form-group col-md-2">
+        
+                  <select id="mySelect" class='form-control'name = "rat[]" required='required'>
+                        <option selected disabled>Rate (1-5)</option>
+                    <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  </select>
+                </div>
+            </div>
+                  <br><br>           
+    <div class='form-row'>
+    <div class="form-group col-md-8 ">
+    <input id='autocomplete'type="text" name="title[]" class="form-control" placeholder="Enter title" required='required' />
+</div>
+<div class="form-group col-md-2">
+        
+                  <select id="mySelect" class='form-control'name = "rat[]" required='required'>
+                        <option selected disabled>Rate (1-5)</option>
+                    <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  </select>
+                </div>
+            </div>
+          <br><br><br><br>
+          <button type="submit" class="btn btn-primary">submit</button>
+          <button onclick="location.href='/'"type="button" class="btn btn-default">Home!</button>
+    <!-- <input type="submit" name="submit" class="btn btn-primary" value="SUBMIT"/> -->
+<div>
+    <p><font size="+1">{{ rating_ }}</font></p>
+<p><font size="+1">{{ films }}</font></p>
+  </form>
+  <!-- <p>When you select a new car, a function is triggered which outputs the value of the selected car.</p> -->
+  <!-- <div id="result"> -->
+    <!-- {% if rat_mv is defined %} -->
+        <!-- You have selected: {{ rat_mv }}  -->
+        <!-- {{film}} -->
+    <!-- {% endif %} -->
+  </div>
+  </body>

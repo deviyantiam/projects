@@ -1,0 +1,8 @@
+.DS_Store
+filepath/
+__pycache__/
+*.csv
+*.pkl
+*.json
+recom/data/
+

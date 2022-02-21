@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <style>
+        .mySlides {display:none;}
+        </style>
+<script type="text/javascript">
+    $(function() { 
+        $.ajax({
+            url: '{{ url_for("autoc") }}'
+            }).done(function (data) {
+                $('#autocomplete').autocomplete({
+                    source: data,
+                    minLength: 2
+
+                });
+            });
+     });
+</script>
+<style>
+    body{font-family:'Open Sans',San-Serif;}
+.btn {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      /* Boostrap Buttons Styling */
+      
+      .btn-default {
+        font-family: Raleway-SemiBold;
+        font-size: 13px;
+        color: #ed7171;
+        letter-spacing: 1px;
+        line-height: 15px;
+        border: 2px solid#ed7171;
+        border-radius: 40px;
+        background: transparent;
+        transition: all 0.3s ease 0s;
+      }
+      
+      .btn-default:hover {
+        color: #FFF;
+        background: #ed7171;
+        border: 2px solid #ed7171;
+      }
+      .btn-primary {
+  font-family: Raleway-SemiBold;
+  font-size: 13px;
+  color: rgba(240, 173, 78, 0.75);
+  letter-spacing: 1px;
+  line-height: 15px;
+  border: 2px solid rgba(240, 173, 78, 0.75);
+  border-radius: 40px;
+  background: transparent;
+  transition: all 0.3s ease 0s;
+}
+
+.btn-primary:hover {
+  color: #FFF;
+  background: rgba(240, 173, 78, 0.75);
+  border: 2px solid rgba(240, 173, 78, 0.75);
+}        
+              
+</style>
+        <title>Product Recommendation</title>
+</head>
+<body><br>
+    
+<br>
+<div align="center">
+<h2 class="w3-center">Feedback on the product you just bought</h2>
+<h6 class="w3-center">Clothes, Jewelry and Hair Product</h6>
+<div class="w3-content w3-section" style="max-width:500px">
+  <img class="mySlides" src="../static/output_42_0.png" style="width:100%">
+  <img class="mySlides" src="../static/output_43_0.png" style="width:100%">
+  <img class="mySlides" src="../static/output_44_0.png" style="width:100%">
+  <img class="mySlides" src="../static/output_45_0.png" style="width:100%">
+  <img class="mySlides" src="../static/output_46_0.png" style="width:100%">
+</div>
+<script>
+        var myIndex = 0;
+        carousel();
+        
+        function carousel() {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+          }
+          myIndex++;
+          if (myIndex > x.length) {myIndex = 1}    
+          x[myIndex-1].style.display = "block";  
+          setTimeout(carousel, 3000); // Change image every 2 seconds
+        }
+        </script>
+</div>    
+    <br>
+        <form id="form1" action="/rec_goods" method="POST"enctype="multipart/form-data">
+        <div class='col-md-offset-4 col-md-4 col-md-offset-5'>            
+        <input id='autocomplete'type="text" name="prodx" class="form-control" placeholder="Name Product" required='required' />
+<br>
+    <select id="mySelect" class='form-control' align='center'name = "ratx">
+    <option selected disabled>Rate (1-5)</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    </select>
+    <br>
+    <textarea name="revx" class="form-control" cols="36" rows="2" placeholder="Review" required='required'></textarea>
+</div>
+    <button type="submit" class="btn btn-primary">submit</button>
+    <br><br></form>
+    <button onclick="location.href='/'"type="button" class="btn btn-default">Home!</button>
+</body>
+</html>
